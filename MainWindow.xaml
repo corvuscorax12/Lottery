@@ -1,0 +1,82 @@
+﻿<Window x:Class="Lotto.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lotto"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="700">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <Slider x:Name="MaxNumber" IsSnapToTickEnabled="True" AutoToolTipPlacement="TopLeft" SmallChange="0" Maximum="99"  />
+            <Label Content="Max Number " VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            
+            <Slider x:Name="AmountofNumbers" Grid.Row="1" IsSnapToTickEnabled="True" AutoToolTipPlacement="TopLeft" SmallChange="0" Maximum="10" />
+            <Label Content="Numbers to Draw " VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1"/>
+            
+            <Slider x:Name="CostPerTicket" Grid.Row="2" IsSnapToTickEnabled="True" AutoToolTipPlacement="TopLeft" SmallChange="0.25" Maximum="10" TickFrequency="0.25" LargeChange="0.25" />
+            <Label Content="Ticket Cost" Grid.Row="2" VerticalAlignment="Center" />
+            
+            <Button x:Name="Submit" Content="Update" Grid.Row="3" Click="Submit_Click"/>
+
+      
+
+
+
+        </Grid>
+        <Grid Grid.Row="2" ToolTip="Finances">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Total Money:"/>
+            <Label Name="TotalMoney"  Content="Null" Grid.Column="1"/>
+            <Label Content="Lotto Cost :" Grid.Row="1"/>
+            <Label Name="LottoCost"  Content="Null" Grid.Row="1" Grid.Column="1"/>
+            <Label Content="Money Lost :" Grid.Row="2"/>
+            <Label Name="MoneyLost"  Content="Null"  Grid.Row="2" Grid.Column="1"/>
+            <Label Content="Money Made :" Grid.Row="3"/>
+            <Label Name="MoneyMade"  Content="Null" Grid.Row="3" Grid.Column="1"/>
+            <Label Content="Profit :" Grid.Row="4"/>
+            <Label Name="Profit"  Content="Null" Grid.Row="4" Grid.Column="1"/>
+
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Button x:Name="GenerateOne" Content="Generate a Drawing" Click="GenerateOne_Click"/>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="LottoDrawings" />
+
+        </Grid>
+
+    </Grid>
+</Window>
